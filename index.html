@@ -6,6 +6,12 @@
 <title>Alex Dev — Arcade Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
+  @media(max-width:600px){
+  #gameCanvas, #particleCanvas {
+    transform: scale(0.75);
+    transform-origin: center top;
+  }
+}
 :root {
   --bg:#07090f;--surface:#0e1220;--surface2:#151b2e;
   --primary:#00e5ff;--primary-dim:#00e5ff55;
@@ -189,7 +195,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
   <div class="stars" id="starsA"></div>
   <div class="landing-content">
     <div class="badge"><span class="blink"></span> AVAILABLE FOR HIRE</div>
-    <h1 class="hero-name">Alex Dev</h1>
+    <h1 class="hero-name">Siva prakash</h1>
     <p class="hero-sub">FULL STACK DEVELOPER · CHENNAI, INDIA</p>
     <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:3px;margin-bottom:1.5rem;">— CHOOSE YOUR EXPERIENCE —</p>
     <div class="mode-grid">
