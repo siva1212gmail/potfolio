@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Siva prakash Portfolio</title>
+<title>Alex Dev — Arcade Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  @media(max-width:600px){
+   @media(max-width:700px){
   #gameCanvas, #particleCanvas {
     transform: scale(0.75);
     transform-origin: center top;
@@ -195,7 +195,7 @@ body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradi
   <div class="stars" id="starsA"></div>
   <div class="landing-content">
     <div class="badge"><span class="blink"></span> AVAILABLE FOR HIRE</div>
-    <h1 class="hero-name">Siva prakash</h1>
+    <h1 class="hero-name">Alex Dev</h1>
     <p class="hero-sub">FULL STACK DEVELOPER · CHENNAI, INDIA</p>
     <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-muted);letter-spacing:3px;margin-bottom:1.5rem;">— CHOOSE YOUR EXPERIENCE —</p>
     <div class="mode-grid">
@@ -485,6 +485,8 @@ function startGame(diff){
     canvas.height= pCanvas.height = rect.height;
   }
   resize();
+  const isMobile = window.innerWidth < 600;
+const sizeScale = isMobile ? 0.55 : 1;
 
   // HUD
   document.getElementById('hudDiff').textContent = diff.toUpperCase();
@@ -503,11 +505,12 @@ function startGame(diff){
   const W=canvas.width, H=canvas.height;
   const balls = SECTIONS.map((key,i)=>{
     const a = (i/SECTIONS.length)*Math.PI*2 + 0.4;
-    const spread = Math.min(W,H)*0.32;
-    const cx=W/2, cy=H/2 - 50;
+    const spread = Math.min(W,H) * (isMobile ? 0.22 : 0.32);
+    const cyOffset = isMobile ? -100 : -50;
+const cx=W/2, cy=H/2 + cyOffset;
     const speed = cfg.speed + Math.random()*cfg.speedVar;
     const dir   = Math.random()*Math.PI*2;
-    const r     = cfg.baseR + Math.random()*10;
+    const r = (cfg.baseR * sizeScale) + Math.random()*10*sizeScale;
     return {
       key, r, hit:false,
       x: cx+Math.cos(a)*spread,
