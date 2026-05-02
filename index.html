@@ -6,6 +6,12 @@
 <title>Alex Dev — Arcade Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
+  @media(max-width:600px){
+  #gameCanvas, #particleCanvas {
+    transform: scale(0.75);
+    transform-origin: center top;
+  }
+}
 :root {
   --bg:#07090f;--surface:#0e1220;--surface2:#151b2e;
   --primary:#00e5ff;--primary-dim:#00e5ff55;
